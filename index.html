@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_1ab458e5ee3a60694764d2f3a1e71c8b {
+                #map_cd662cc5cf537d16fe6a8157f70a26f2 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -132,7 +132,7 @@
             
                 <div class="timeline-gap">
                   <span>🚗 약 5분 · 2.13km</span>
-                  <strong>11:05 출발 권장</strong>
+                  <strong>11:15 출발 권장</strong>
                 </div>
                 
             <button class="timeline-stop" type="button"
@@ -147,7 +147,7 @@
             
                 <div class="timeline-gap">
                   <span>🚗 약 10분 · 1.57km</span>
-                  <strong>11:40 출발 권장</strong>
+                  <strong>11:50 출발 권장</strong>
                 </div>
                 
             <button class="timeline-stop" type="button"
@@ -162,7 +162,7 @@
             
                 <div class="timeline-gap">
                   <span>🚗 약 15분 · 5.82km</span>
-                  <strong>12:35 출발 권장</strong>
+                  <strong>12:45 출발 권장</strong>
                 </div>
                 
             <button class="timeline-stop" type="button"
@@ -177,7 +177,7 @@
             
                 <div class="timeline-gap">
                   <span>🚗 약 45분 · 49.30km</span>
-                  <strong>14:35 출발 권장</strong>
+                  <strong>14:45 출발 권장</strong>
                 </div>
                 
             <button class="timeline-stop" type="button"
@@ -192,7 +192,7 @@
             
                 <div class="timeline-gap">
                   <span>🚗 약 15분 · 7.94km</span>
-                  <strong>18:05 출발 권장</strong>
+                  <strong>18:15 출발 권장</strong>
                 </div>
                 
             <button class="timeline-stop" type="button"
@@ -205,12 +205,12 @@
               </span>
             </button>
             </div>
-      <p class="trip-note">권장 출발 = 목표 도착시각 − 운전시간 − 여유 10분. 지도 선은 일정 순서를 잇는 직선이며 실제 도로 경로가 아닙니다.</p>
+      <p class="trip-note">권장 출발 = 목표 도착시각 − 운전시간. 별도 여유시간은 반영하지 않았습니다. 지도 선은 일정 순서를 잇는 직선이며 실제 도로 경로가 아닙니다.</p>
     </aside>
 
     <script>
       function focusStop(lat, lon) {
-        map_1ab458e5ee3a60694764d2f3a1e71c8b.flyTo([lat, lon], 14, {duration: 0.8});
+        map_cd662cc5cf537d16fe6a8157f70a26f2.flyTo([lat, lon], 14, {duration: 0.8});
       }
       function toggleTripPanel() {
         const panel = document.getElementById('trip-panel');
@@ -222,14 +222,14 @@
     </script>
     
     
-            <div class="folium-map" id="map_1ab458e5ee3a60694764d2f3a1e71c8b" ></div>
+            <div class="folium-map" id="map_cd662cc5cf537d16fe6a8157f70a26f2" ></div>
         
 </body>
 <script>
     
     
-            var map_1ab458e5ee3a60694764d2f3a1e71c8b = L.map(
-                "map_1ab458e5ee3a60694764d2f3a1e71c8b",
+            var map_cd662cc5cf537d16fe6a8157f70a26f2 = L.map(
+                "map_cd662cc5cf537d16fe6a8157f70a26f2",
                 {
                     center: [37.92, 128.1],
                     crs: L.CRS.EPSG3857,
@@ -241,13 +241,13 @@
 
                 }
             );
-            L.control.scale().addTo(map_1ab458e5ee3a60694764d2f3a1e71c8b);
+            L.control.scale().addTo(map_cd662cc5cf537d16fe6a8157f70a26f2);
 
             
 
         
     
-            var tile_layer_5345ddda8cdc5e7cc9b2f468b76a61c7 = L.tileLayer(
+            var tile_layer_0ef30729f9f63c32a8aaf01c1939617e = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -264,22 +264,22 @@
             );
         
     
-            tile_layer_5345ddda8cdc5e7cc9b2f468b76a61c7.addTo(map_1ab458e5ee3a60694764d2f3a1e71c8b);
+            tile_layer_0ef30729f9f63c32a8aaf01c1939617e.addTo(map_cd662cc5cf537d16fe6a8157f70a26f2);
         
     
-            var feature_group_ad144c17de7aeda0f7844d72dde0ec63 = L.featureGroup(
+            var feature_group_970748a3549e3e15d8ce2da941884e95 = L.featureGroup(
                 {
 }
             );
         
     
-            var poly_line_acf73a364dc6d1a6713a6053e60b1f19 = L.polyline(
+            var poly_line_beb7e5ab8798d79879125025feb9073d = L.polyline(
                 [[37.5548238, 126.9722165], [37.7645305, 128.8996633]],
                 {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": "10 8", "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.78, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(feature_group_ad144c17de7aeda0f7844d72dde0ec63);
+            ).addTo(feature_group_970748a3549e3e15d8ce2da941884e95);
         
     
-            poly_line_acf73a364dc6d1a6713a6053e60b1f19.bindTooltip(
+            poly_line_beb7e5ab8798d79879125025feb9073d.bindTooltip(
                 `<div>
                      열차 이동 · 서울역 → 강릉역
                  </div>`,
@@ -289,14 +289,14 @@
             );
         
     
-            var marker_1b228daff35304fa8f2d687cb5680b41 = L.marker(
+            var marker_f1bc911c71def322a1bbc4c2745ed8d6 = L.marker(
                 [37.5548238, 126.9722165],
                 {
 }
-            ).addTo(feature_group_ad144c17de7aeda0f7844d72dde0ec63);
+            ).addTo(feature_group_970748a3549e3e15d8ce2da941884e95);
         
     
-            var div_icon_d97d92ec69ccc3ed6bf5fed12782504f = L.divIcon({
+            var div_icon_d887b0e28189b485a72ce30ea391f4fd = L.divIcon({
   "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#2563eb\" aria-label=\"1\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e1\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconSize": [36, 44],
   "iconAnchor": [18, 42],
@@ -305,24 +305,24 @@
 });
         
     
-        var popup_6391a041ac4e9e2c900647f29d6619e8 = L.popup({
+        var popup_598c5233380795fb54817faa471bee4d = L.popup({
   "maxWidth": 310,
 });
 
         
             
-                var html_b0871ee39b9ca23803867c727ebb9e98 = $(`<div id="html_b0871ee39b9ca23803867c727ebb9e98" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 1</div>       <div class="popup-time">08:57</div>       <h3>서울역</h3>       <p class="popup-activity">🚆 강릉으로 출발</p>       <p class="popup-address">서울특별시 용산구 한강대로 405</p>              <a href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%95%9C%EA%B0%95%EB%8C%80%EB%A1%9C%20405" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
-                popup_6391a041ac4e9e2c900647f29d6619e8.setContent(html_b0871ee39b9ca23803867c727ebb9e98);
+                var html_82037cc6b5850daa0535e1f4c0dc11fa = $(`<div id="html_82037cc6b5850daa0535e1f4c0dc11fa" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 1</div>       <div class="popup-time">08:57</div>       <h3>서울역</h3>       <p class="popup-activity">🚆 강릉으로 출발</p>       <p class="popup-address">서울특별시 용산구 한강대로 405</p>              <a href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%95%9C%EA%B0%95%EB%8C%80%EB%A1%9C%20405" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_598c5233380795fb54817faa471bee4d.setContent(html_82037cc6b5850daa0535e1f4c0dc11fa);
             
         
 
-        marker_1b228daff35304fa8f2d687cb5680b41.bindPopup(popup_6391a041ac4e9e2c900647f29d6619e8)
+        marker_f1bc911c71def322a1bbc4c2745ed8d6.bindPopup(popup_598c5233380795fb54817faa471bee4d)
         ;
 
         
     
     
-            marker_1b228daff35304fa8f2d687cb5680b41.bindTooltip(
+            marker_f1bc911c71def322a1bbc4c2745ed8d6.bindTooltip(
                 `<div>
                      1. 08:57 · 서울역
                  </div>`,
@@ -332,27 +332,27 @@
             );
         
     
-                marker_1b228daff35304fa8f2d687cb5680b41.setIcon(div_icon_d97d92ec69ccc3ed6bf5fed12782504f);
+                marker_f1bc911c71def322a1bbc4c2745ed8d6.setIcon(div_icon_d887b0e28189b485a72ce30ea391f4fd);
             
     
-            feature_group_ad144c17de7aeda0f7844d72dde0ec63.addTo(map_1ab458e5ee3a60694764d2f3a1e71c8b);
+            feature_group_970748a3549e3e15d8ce2da941884e95.addTo(map_cd662cc5cf537d16fe6a8157f70a26f2);
         
     
-            var feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4 = L.featureGroup(
+            var feature_group_9c1be746951eab143351137ce88124de = L.featureGroup(
                 {
 }
             );
         
     
-            var poly_line_2d9d3c072445a81fd6ed3535c8d001c8 = L.polyline(
+            var poly_line_5d32c2b73f5d05a4837111374dc3feae = L.polyline(
                 [[37.7645305, 128.8996633], [37.7546641, 128.8885505]],
                 {"bubblingMouseEvents": true, "color": "#ea580c", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ea580c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.82, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            poly_line_2d9d3c072445a81fd6ed3535c8d001c8.bindTooltip(
+            poly_line_5d32c2b73f5d05a4837111374dc3feae.bindTooltip(
                 `<div>
-                     강릉역 → 히노키공방 · 약 5분 · 11:05 출발 권장
+                     강릉역 → 히노키공방 · 약 5분 · 11:15 출발 권장
                  </div>`,
                 {
   "sticky": true,
@@ -360,15 +360,15 @@
             );
         
     
-            var poly_line_ea7fb39b9c9dae4beaac299ec3507b2f = L.polyline(
+            var poly_line_a98402dc911437bf1fc7dc7bfdcdab16 = L.polyline(
                 [[37.7546641, 128.8885505], [37.7539977, 128.8986328]],
                 {"bubblingMouseEvents": true, "color": "#ea580c", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ea580c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.82, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            poly_line_ea7fb39b9c9dae4beaac299ec3507b2f.bindTooltip(
+            poly_line_a98402dc911437bf1fc7dc7bfdcdab16.bindTooltip(
                 `<div>
-                     히노키공방 → 중앙시장 · 약 10분 · 11:40 출발 권장
+                     히노키공방 → 중앙시장 · 약 10분 · 11:50 출발 권장
                  </div>`,
                 {
   "sticky": true,
@@ -376,15 +376,15 @@
             );
         
     
-            var poly_line_b06199293ddda0c5dc9f33fac14ac913 = L.polyline(
+            var poly_line_7832797f336ce838908507a948ce4a29 = L.polyline(
                 [[37.7539977, 128.8986328], [37.791103, 128.8809359]],
                 {"bubblingMouseEvents": true, "color": "#ea580c", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ea580c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.82, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            poly_line_b06199293ddda0c5dc9f33fac14ac913.bindTooltip(
+            poly_line_7832797f336ce838908507a948ce4a29.bindTooltip(
                 `<div>
-                     중앙시장 → 서지초가뜰 · 약 15분 · 12:35 출발 권장
+                     중앙시장 → 서지초가뜰 · 약 15분 · 12:45 출발 권장
                  </div>`,
                 {
   "sticky": true,
@@ -392,15 +392,15 @@
             );
         
     
-            var poly_line_a3e204e9bb6fb6dbf4f6931b663d4389 = L.polyline(
+            var poly_line_a36fe24fc8c153ac975b771879181eba = L.polyline(
                 [[37.791103, 128.8809359], [38.116084, 128.6323148]],
                 {"bubblingMouseEvents": true, "color": "#ea580c", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ea580c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.82, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            poly_line_a3e204e9bb6fb6dbf4f6931b663d4389.bindTooltip(
+            poly_line_a36fe24fc8c153ac975b771879181eba.bindTooltip(
                 `<div>
-                     서지초가뜰 → 르부르 낙산 · 약 45분 · 14:35 출발 권장
+                     서지초가뜰 → 르부르 낙산 · 약 45분 · 14:45 출발 권장
                  </div>`,
                 {
   "sticky": true,
@@ -408,15 +408,15 @@
             );
         
     
-            var poly_line_1ba982c01c66f1abcfaba0594b2440fd = L.polyline(
+            var poly_line_1bc909032ed621b1334fd9eb2822f947 = L.polyline(
                 [[38.116084, 128.6323148], [38.0650501, 128.6209132]],
                 {"bubblingMouseEvents": true, "color": "#ea580c", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ea580c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.82, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            poly_line_1ba982c01c66f1abcfaba0594b2440fd.bindTooltip(
+            poly_line_1bc909032ed621b1334fd9eb2822f947.bindTooltip(
                 `<div>
-                     르부르 낙산 → 송이버섯마을 · 약 15분 · 18:05 출발 권장
+                     르부르 낙산 → 송이버섯마을 · 약 15분 · 18:15 출발 권장
                  </div>`,
                 {
   "sticky": true,
@@ -424,14 +424,14 @@
             );
         
     
-            var marker_3114a7b03fc2e8f9b036cbe137262806 = L.marker(
+            var marker_333bfc3784d8e27e027cb4c9c3c89548 = L.marker(
                 [37.7645305, 128.8996633],
                 {
 }
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            var div_icon_52df61ef6ee811d67e7fca1c70f6251c = L.divIcon({
+            var div_icon_688fef8b164ee9e974847c08b5f8e870 = L.divIcon({
   "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#2563eb\" aria-label=\"2\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e2\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconSize": [36, 44],
   "iconAnchor": [18, 42],
@@ -440,24 +440,24 @@
 });
         
     
-        var popup_5008cb5205ec43a2cd25d80b8fb556ff = L.popup({
+        var popup_14ab6691af9b12c7dc5a7d979cc80a09 = L.popup({
   "maxWidth": 310,
 });
 
         
             
-                var html_85618200b2bd512114e0f6a846823d7e = $(`<div id="html_85618200b2bd512114e0f6a846823d7e" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 2</div>       <div class="popup-time">10:58</div>       <h3>강릉역</h3>       <p class="popup-activity">📍 강릉 입성</p>       <p class="popup-address">강원특별자치도 강릉시 용지로 176</p>                <p class="popup-route">🚗 다음 이동 약 5분<br>         <strong>11:05 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EC%9A%A9%EC%A7%80%EB%A1%9C%20176" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
-                popup_5008cb5205ec43a2cd25d80b8fb556ff.setContent(html_85618200b2bd512114e0f6a846823d7e);
+                var html_b7578635100972c9746118b67c6f092c = $(`<div id="html_b7578635100972c9746118b67c6f092c" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 2</div>       <div class="popup-time">10:58</div>       <h3>강릉역</h3>       <p class="popup-activity">📍 강릉 입성</p>       <p class="popup-address">강원특별자치도 강릉시 용지로 176</p>                <p class="popup-route">🚗 다음 이동 약 5분<br>         <strong>11:15 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EC%9A%A9%EC%A7%80%EB%A1%9C%20176" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_14ab6691af9b12c7dc5a7d979cc80a09.setContent(html_b7578635100972c9746118b67c6f092c);
             
         
 
-        marker_3114a7b03fc2e8f9b036cbe137262806.bindPopup(popup_5008cb5205ec43a2cd25d80b8fb556ff)
+        marker_333bfc3784d8e27e027cb4c9c3c89548.bindPopup(popup_14ab6691af9b12c7dc5a7d979cc80a09)
         ;
 
         
     
     
-            marker_3114a7b03fc2e8f9b036cbe137262806.bindTooltip(
+            marker_333bfc3784d8e27e027cb4c9c3c89548.bindTooltip(
                 `<div>
                      2. 10:58 · 강릉역
                  </div>`,
@@ -467,17 +467,17 @@
             );
         
     
-                marker_3114a7b03fc2e8f9b036cbe137262806.setIcon(div_icon_52df61ef6ee811d67e7fca1c70f6251c);
+                marker_333bfc3784d8e27e027cb4c9c3c89548.setIcon(div_icon_688fef8b164ee9e974847c08b5f8e870);
             
     
-            var marker_8ef6c5f0d3c51a63c31a2f8b171f183f = L.marker(
+            var marker_47c1d5ca1939e716be3ca18c4b35ea92 = L.marker(
                 [37.7546641, 128.8885505],
                 {
 }
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            var div_icon_1dc2093d84b6c59cbbab8fd2fcd8d7a4 = L.divIcon({
+            var div_icon_2572b10db253fafded202938c601f9df = L.divIcon({
   "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"3\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e3\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconSize": [36, 44],
   "iconAnchor": [18, 42],
@@ -486,24 +486,24 @@
 });
         
     
-        var popup_897a3d4a8f0a61816b790036575ff61e = L.popup({
+        var popup_7f231b735228df922b7f1a3c230473ec = L.popup({
   "maxWidth": 310,
 });
 
         
             
-                var html_0d3fbe91ed86f02f700fcfca74b021b5 = $(`<div id="html_0d3fbe91ed86f02f700fcfca74b021b5" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 3</div>       <div class="popup-time">11:20</div>       <h3>히노키공방</h3>       <p class="popup-activity">🍽️ 점심 식사</p>       <p class="popup-address">강원 강릉시 골말길 43 1층</p>                <p class="popup-route">🚗 다음 이동 약 10분<br>         <strong>11:40 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EA%B3%A8%EB%A7%90%EA%B8%B8%2043%201%EC%B8%B5" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
-                popup_897a3d4a8f0a61816b790036575ff61e.setContent(html_0d3fbe91ed86f02f700fcfca74b021b5);
+                var html_db4b5f943e85dff8038aee0fba9df34b = $(`<div id="html_db4b5f943e85dff8038aee0fba9df34b" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 3</div>       <div class="popup-time">11:20</div>       <h3>히노키공방</h3>       <p class="popup-activity">🍽️ 점심 식사</p>       <p class="popup-address">강원 강릉시 골말길 43 1층</p>                <p class="popup-route">🚗 다음 이동 약 10분<br>         <strong>11:50 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EA%B3%A8%EB%A7%90%EA%B8%B8%2043%201%EC%B8%B5" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_7f231b735228df922b7f1a3c230473ec.setContent(html_db4b5f943e85dff8038aee0fba9df34b);
             
         
 
-        marker_8ef6c5f0d3c51a63c31a2f8b171f183f.bindPopup(popup_897a3d4a8f0a61816b790036575ff61e)
+        marker_47c1d5ca1939e716be3ca18c4b35ea92.bindPopup(popup_7f231b735228df922b7f1a3c230473ec)
         ;
 
         
     
     
-            marker_8ef6c5f0d3c51a63c31a2f8b171f183f.bindTooltip(
+            marker_47c1d5ca1939e716be3ca18c4b35ea92.bindTooltip(
                 `<div>
                      3. 11:20 · 히노키공방
                  </div>`,
@@ -513,17 +513,17 @@
             );
         
     
-                marker_8ef6c5f0d3c51a63c31a2f8b171f183f.setIcon(div_icon_1dc2093d84b6c59cbbab8fd2fcd8d7a4);
+                marker_47c1d5ca1939e716be3ca18c4b35ea92.setIcon(div_icon_2572b10db253fafded202938c601f9df);
             
     
-            var marker_701d00b59e2df427a42273530a635b0b = L.marker(
+            var marker_660a36eaa783b57260034469a90e27e4 = L.marker(
                 [37.7539977, 128.8986328],
                 {
 }
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            var div_icon_088c4f0d43a60dbc40f127b278bf6dde = L.divIcon({
+            var div_icon_d2aeb7ae5543082a62ef4e540c04896f = L.divIcon({
   "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"4\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e4\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconSize": [36, 44],
   "iconAnchor": [18, 42],
@@ -532,24 +532,24 @@
 });
         
     
-        var popup_2876c07785807ebcac070fcfb4e84640 = L.popup({
+        var popup_99b1f44d8daedaeacc9fd5c2e0b07e21 = L.popup({
   "maxWidth": 310,
 });
 
         
             
-                var html_de6892fdbf85bd209c9b9b23d52e61c5 = $(`<div id="html_de6892fdbf85bd209c9b9b23d52e61c5" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 4</div>       <div class="popup-time">12:00</div>       <h3>중앙시장</h3>       <p class="popup-activity">🛍️ 메종고니 · 포테이토교</p>       <p class="popup-address">강원 강릉시 금성로 21</p>                <p class="popup-route">🚗 다음 이동 약 15분<br>         <strong>12:35 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EA%B8%88%EC%84%B1%EB%A1%9C%2021" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
-                popup_2876c07785807ebcac070fcfb4e84640.setContent(html_de6892fdbf85bd209c9b9b23d52e61c5);
+                var html_90b9720409e00ba57ff45e2e251036c3 = $(`<div id="html_90b9720409e00ba57ff45e2e251036c3" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 4</div>       <div class="popup-time">12:00</div>       <h3>중앙시장</h3>       <p class="popup-activity">🛍️ 메종고니 · 포테이토교</p>       <p class="popup-address">강원 강릉시 금성로 21</p>                <p class="popup-route">🚗 다음 이동 약 15분<br>         <strong>12:45 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EA%B8%88%EC%84%B1%EB%A1%9C%2021" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_99b1f44d8daedaeacc9fd5c2e0b07e21.setContent(html_90b9720409e00ba57ff45e2e251036c3);
             
         
 
-        marker_701d00b59e2df427a42273530a635b0b.bindPopup(popup_2876c07785807ebcac070fcfb4e84640)
+        marker_660a36eaa783b57260034469a90e27e4.bindPopup(popup_99b1f44d8daedaeacc9fd5c2e0b07e21)
         ;
 
         
     
     
-            marker_701d00b59e2df427a42273530a635b0b.bindTooltip(
+            marker_660a36eaa783b57260034469a90e27e4.bindTooltip(
                 `<div>
                      4. 12:00 · 중앙시장
                  </div>`,
@@ -559,17 +559,17 @@
             );
         
     
-                marker_701d00b59e2df427a42273530a635b0b.setIcon(div_icon_088c4f0d43a60dbc40f127b278bf6dde);
+                marker_660a36eaa783b57260034469a90e27e4.setIcon(div_icon_d2aeb7ae5543082a62ef4e540c04896f);
             
     
-            var marker_7a35f3ba57238711a81395b01dfdeb23 = L.marker(
+            var marker_dac0ee4d87bedd2ff07c8ab0d50cf535 = L.marker(
                 [37.791103, 128.8809359],
                 {
 }
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            var div_icon_b2209c60bd23569bf5cb907ccee6873a = L.divIcon({
+            var div_icon_da7fac9461d6a39f5b4f2927a6abfda6 = L.divIcon({
   "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"5\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e5\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconSize": [36, 44],
   "iconAnchor": [18, 42],
@@ -578,24 +578,24 @@
 });
         
     
-        var popup_54f280dcac7479e98b6dda9858e6bc15 = L.popup({
+        var popup_227e46df1580662847bba75a6551f950 = L.popup({
   "maxWidth": 310,
 });
 
         
             
-                var html_96bc1a8229a54a235d2664a1ea1c0e6a = $(`<div id="html_96bc1a8229a54a235d2664a1ea1c0e6a" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 5</div>       <div class="popup-time">13:00</div>       <h3>서지초가뜰</h3>       <p class="popup-activity">☕ 카페</p>       <p class="popup-address">강원 강릉시 난곡길76번길 43-8</p>                <p class="popup-route">🚗 다음 이동 약 45분<br>         <strong>14:35 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EB%82%9C%EA%B3%A1%EA%B8%B876%EB%B2%88%EA%B8%B8%2043-8" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
-                popup_54f280dcac7479e98b6dda9858e6bc15.setContent(html_96bc1a8229a54a235d2664a1ea1c0e6a);
+                var html_9605f38901db79b79beedeb41ff5b3da = $(`<div id="html_9605f38901db79b79beedeb41ff5b3da" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 5</div>       <div class="popup-time">13:00</div>       <h3>서지초가뜰</h3>       <p class="popup-activity">☕ 카페</p>       <p class="popup-address">강원 강릉시 난곡길76번길 43-8</p>                <p class="popup-route">🚗 다음 이동 약 45분<br>         <strong>14:45 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EB%82%9C%EA%B3%A1%EA%B8%B876%EB%B2%88%EA%B8%B8%2043-8" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_227e46df1580662847bba75a6551f950.setContent(html_9605f38901db79b79beedeb41ff5b3da);
             
         
 
-        marker_7a35f3ba57238711a81395b01dfdeb23.bindPopup(popup_54f280dcac7479e98b6dda9858e6bc15)
+        marker_dac0ee4d87bedd2ff07c8ab0d50cf535.bindPopup(popup_227e46df1580662847bba75a6551f950)
         ;
 
         
     
     
-            marker_7a35f3ba57238711a81395b01dfdeb23.bindTooltip(
+            marker_dac0ee4d87bedd2ff07c8ab0d50cf535.bindTooltip(
                 `<div>
                      5. 13:00 · 서지초가뜰
                  </div>`,
@@ -605,17 +605,17 @@
             );
         
     
-                marker_7a35f3ba57238711a81395b01dfdeb23.setIcon(div_icon_b2209c60bd23569bf5cb907ccee6873a);
+                marker_dac0ee4d87bedd2ff07c8ab0d50cf535.setIcon(div_icon_da7fac9461d6a39f5b4f2927a6abfda6);
             
     
-            var marker_9ef398d60b5d7786f9c85f8f02449ddc = L.marker(
+            var marker_e9d72e61eb95989ba0a68f3f74b1d90d = L.marker(
                 [38.116084, 128.6323148],
                 {
 }
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            var div_icon_eff92377702e48cf992de147ef6ca12b = L.divIcon({
+            var div_icon_39ec1c3bd76d30ada9ba4656eeef057b = L.divIcon({
   "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"6\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e6\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconSize": [36, 44],
   "iconAnchor": [18, 42],
@@ -624,24 +624,24 @@
 });
         
     
-        var popup_502c066626abfaccfd215b2fe6751506 = L.popup({
+        var popup_1421815bf2a85a5f9a0d8eb1434489b4 = L.popup({
   "maxWidth": 310,
 });
 
         
             
-                var html_8cf4c157e8ebea0d88ce52b8a1ce3bdc = $(`<div id="html_8cf4c157e8ebea0d88ce52b8a1ce3bdc" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 6</div>       <div class="popup-time">15:30</div>       <h3>숙소 · 르부르 낙산</h3>       <p class="popup-activity">🏊 짐 풀기 → 실내 수영</p>       <p class="popup-address">강원 양양군 강현면 일출로 47</p>                <p class="popup-route">🚗 다음 이동 약 15분<br>         <strong>18:05 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EC%96%91%EC%96%91%EA%B5%B0%20%EA%B0%95%ED%98%84%EB%A9%B4%20%EC%9D%BC%EC%B6%9C%EB%A1%9C%2047" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
-                popup_502c066626abfaccfd215b2fe6751506.setContent(html_8cf4c157e8ebea0d88ce52b8a1ce3bdc);
+                var html_0d3c90676663902ea6e7479f377a5cb6 = $(`<div id="html_0d3c90676663902ea6e7479f377a5cb6" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 6</div>       <div class="popup-time">15:30</div>       <h3>숙소 · 르부르 낙산</h3>       <p class="popup-activity">🏊 짐 풀기 → 실내 수영</p>       <p class="popup-address">강원 양양군 강현면 일출로 47</p>                <p class="popup-route">🚗 다음 이동 약 15분<br>         <strong>18:15 출발 권장</strong></p>                <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EC%96%91%EC%96%91%EA%B5%B0%20%EA%B0%95%ED%98%84%EB%A9%B4%20%EC%9D%BC%EC%B6%9C%EB%A1%9C%2047" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_1421815bf2a85a5f9a0d8eb1434489b4.setContent(html_0d3c90676663902ea6e7479f377a5cb6);
             
         
 
-        marker_9ef398d60b5d7786f9c85f8f02449ddc.bindPopup(popup_502c066626abfaccfd215b2fe6751506)
+        marker_e9d72e61eb95989ba0a68f3f74b1d90d.bindPopup(popup_1421815bf2a85a5f9a0d8eb1434489b4)
         ;
 
         
     
     
-            marker_9ef398d60b5d7786f9c85f8f02449ddc.bindTooltip(
+            marker_e9d72e61eb95989ba0a68f3f74b1d90d.bindTooltip(
                 `<div>
                      6. 15:30 · 숙소 · 르부르 낙산
                  </div>`,
@@ -651,17 +651,17 @@
             );
         
     
-                marker_9ef398d60b5d7786f9c85f8f02449ddc.setIcon(div_icon_eff92377702e48cf992de147ef6ca12b);
+                marker_e9d72e61eb95989ba0a68f3f74b1d90d.setIcon(div_icon_39ec1c3bd76d30ada9ba4656eeef057b);
             
     
-            var marker_2ca862f03f528c69a8147f46c509c5eb = L.marker(
+            var marker_c29a9f9537c2971f2550b0593e92379f = L.marker(
                 [38.0650501, 128.6209132],
                 {
 }
-            ).addTo(feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4);
+            ).addTo(feature_group_9c1be746951eab143351137ce88124de);
         
     
-            var div_icon_d1aa8a84c323235534adacc8cf031185 = L.divIcon({
+            var div_icon_8d7adcda0ac674006975b9fd1e669f59 = L.divIcon({
   "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"7\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e7\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconSize": [36, 44],
   "iconAnchor": [18, 42],
@@ -670,24 +670,24 @@
 });
         
     
-        var popup_5d5f4e5047e79628279d855d893654cc = L.popup({
+        var popup_aaba3eac539d44b9bd878da5267fa475 = L.popup({
   "maxWidth": 310,
 });
 
         
             
-                var html_068e31e0717ac29b41a17589a3b74fac = $(`<div id="html_068e31e0717ac29b41a17589a3b74fac" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 7</div>       <div class="popup-time">18:30</div>       <h3>송이버섯마을</h3>       <p class="popup-activity">🍄 저녁 식사</p>       <p class="popup-address">강원 양양군 양양읍 남대천로 55-20</p>              <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EC%96%91%EC%96%91%EA%B5%B0%20%EC%96%91%EC%96%91%EC%9D%8D%20%EB%82%A8%EB%8C%80%EC%B2%9C%EB%A1%9C%2055-20" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
-                popup_5d5f4e5047e79628279d855d893654cc.setContent(html_068e31e0717ac29b41a17589a3b74fac);
+                var html_8e7a08a8ce6b5067c231f2b8422aadf5 = $(`<div id="html_8e7a08a8ce6b5067c231f2b8422aadf5" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 7</div>       <div class="popup-time">18:30</div>       <h3>송이버섯마을</h3>       <p class="popup-activity">🍄 저녁 식사</p>       <p class="popup-address">강원 양양군 양양읍 남대천로 55-20</p>              <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EC%96%91%EC%96%91%EA%B5%B0%20%EC%96%91%EC%96%91%EC%9D%8D%20%EB%82%A8%EB%8C%80%EC%B2%9C%EB%A1%9C%2055-20" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_aaba3eac539d44b9bd878da5267fa475.setContent(html_8e7a08a8ce6b5067c231f2b8422aadf5);
             
         
 
-        marker_2ca862f03f528c69a8147f46c509c5eb.bindPopup(popup_5d5f4e5047e79628279d855d893654cc)
+        marker_c29a9f9537c2971f2550b0593e92379f.bindPopup(popup_aaba3eac539d44b9bd878da5267fa475)
         ;
 
         
     
     
-            marker_2ca862f03f528c69a8147f46c509c5eb.bindTooltip(
+            marker_c29a9f9537c2971f2550b0593e92379f.bindTooltip(
                 `<div>
                      7. 18:30 · 송이버섯마을
                  </div>`,
@@ -697,30 +697,30 @@
             );
         
     
-                marker_2ca862f03f528c69a8147f46c509c5eb.setIcon(div_icon_d1aa8a84c323235534adacc8cf031185);
+                marker_c29a9f9537c2971f2550b0593e92379f.setIcon(div_icon_8d7adcda0ac674006975b9fd1e669f59);
             
     
-            feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4.addTo(map_1ab458e5ee3a60694764d2f3a1e71c8b);
+            feature_group_9c1be746951eab143351137ce88124de.addTo(map_cd662cc5cf537d16fe6a8157f70a26f2);
         
     
-            var layer_control_08c0483399410bb600be8e769f0be182_layers = {
+            var layer_control_4244d03c88c7df0f1b0c5fd598fe8a01_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_5345ddda8cdc5e7cc9b2f468b76a61c7,
+                    "openstreetmap" : tile_layer_0ef30729f9f63c32a8aaf01c1939617e,
                 },
                 overlays :  {
-                    "\uc5f4\ucc28 \uc774\ub3d9 \u00b7 \uc11c\uc6b8\u2192\uac15\ub989" : feature_group_ad144c17de7aeda0f7844d72dde0ec63,
-                    "\ud604\uc9c0 \uc77c\uc815 \u00b7 \uac15\ub989\u2192\uc591\uc591" : feature_group_36f15c7ecb7d7db22b4d8667eec7c5b4,
+                    "\uc5f4\ucc28 \uc774\ub3d9 \u00b7 \uc11c\uc6b8\u2192\uac15\ub989" : feature_group_970748a3549e3e15d8ce2da941884e95,
+                    "\ud604\uc9c0 \uc77c\uc815 \u00b7 \uac15\ub989\u2192\uc591\uc591" : feature_group_9c1be746951eab143351137ce88124de,
                 },
             };
-            let layer_control_08c0483399410bb600be8e769f0be182 = L.control.layers(
-                layer_control_08c0483399410bb600be8e769f0be182_layers.base_layers,
-                layer_control_08c0483399410bb600be8e769f0be182_layers.overlays,
+            let layer_control_4244d03c88c7df0f1b0c5fd598fe8a01 = L.control.layers(
+                layer_control_4244d03c88c7df0f1b0c5fd598fe8a01_layers.base_layers,
+                layer_control_4244d03c88c7df0f1b0c5fd598fe8a01_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_1ab458e5ee3a60694764d2f3a1e71c8b);
+            ).addTo(map_cd662cc5cf537d16fe6a8157f70a26f2);
 
         
     
@@ -731,15 +731,15 @@
   "titleCancel": "\uc804\uccb4 \ud654\uba74 \uc885\ub8cc",
   "forceSeparateButton": false,
 }
-            ).addTo(map_1ab458e5ee3a60694764d2f3a1e71c8b);
+            ).addTo(map_cd662cc5cf537d16fe6a8157f70a26f2);
         
     
-            var tile_layer_6b1423b0d3290a33aeab7fe51d93fc47 = L.tileLayer(
+            var tile_layer_2cbf3694bbc48ed0ff9a2b1963189ddf = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
-            var mini_map_84fcaca1347f4055c32b2e2de5f017bc = new L.Control.MiniMap(
-                tile_layer_6b1423b0d3290a33aeab7fe51d93fc47,
+            var mini_map_e70847467428b1a66adf66337b55731c = new L.Control.MiniMap(
+                tile_layer_2cbf3694bbc48ed0ff9a2b1963189ddf,
                 {
   "position": "bottomright",
   "width": 130,
@@ -754,10 +754,10 @@
   "minimized": false,
 }
             );
-            map_1ab458e5ee3a60694764d2f3a1e71c8b.addControl(mini_map_84fcaca1347f4055c32b2e2de5f017bc);
+            map_cd662cc5cf537d16fe6a8157f70a26f2.addControl(mini_map_e70847467428b1a66adf66337b55731c);
         
     
-            map_1ab458e5ee3a60694764d2f3a1e71c8b.fitBounds(
+            map_cd662cc5cf537d16fe6a8157f70a26f2.fitBounds(
                 [[37.5548238, 126.9722165], [37.7645305, 128.8996633], [37.7546641, 128.8885505], [37.7539977, 128.8986328], [37.791103, 128.8809359], [38.116084, 128.6323148], [38.0650501, 128.6209132]],
                 {"padding": [38, 38]}
             );
