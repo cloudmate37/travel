@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0d09262ddda9c4dc16cd2b97580accdc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+    <style>
+      :root { --ink:#172033; --muted:#667085; --paper:#fff; --line:#e4e7ec; --blue:#2563eb; --orange:#ea580c; }
+      html, body { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+      .route-marker { width:34px; height:34px; border:3px solid #fff; border-radius:50% 50% 50% 8px; transform:rotate(-45deg); box-shadow:0 4px 12px rgba(15,23,42,.25); display:grid; place-items:center; color:#fff; }
+      .route-marker span { transform:rotate(45deg); font-weight:800; font-size:14px; }
+      .route-div-icon { background:transparent; border:0; }
+      .trip-panel { position:fixed; z-index:9998; top:18px; left:18px; width:330px; max-height:calc(100vh - 36px); overflow:auto; box-sizing:border-box; background:rgba(255,255,255,.96); color:var(--ink); border:1px solid rgba(15,23,42,.10); border-radius:18px; box-shadow:0 18px 48px rgba(15,23,42,.22); backdrop-filter:blur(12px); }
+      .trip-head { position:sticky; top:0; z-index:2; padding:18px 18px 15px; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); border-radius:18px 18px 0 0; }
+      .trip-kicker { color:var(--orange); font-size:12px; font-weight:800; letter-spacing:.08em; }
+      .trip-head h1 { margin:5px 0 4px; font-size:20px; line-height:1.25; }
+      .trip-head p { margin:0; color:var(--muted); font-size:13px; }
+      .panel-toggle { position:absolute; top:14px; right:14px; width:34px; height:34px; border:0; border-radius:10px; background:#f2f4f7; color:var(--ink); cursor:pointer; font-size:18px; }
+      .timeline { padding:14px 14px 16px; }
+      .timeline-stop { width:100%; display:grid; grid-template-columns:34px 1fr; gap:11px; align-items:start; border:0; border-radius:12px; padding:9px; background:transparent; color:inherit; text-align:left; cursor:pointer; }
+      .timeline-stop:hover, .timeline-stop:focus-visible { background:#f2f4f7; outline:none; }
+      .timeline-number { width:30px; height:30px; display:grid; place-items:center; border-radius:50%; background:var(--orange); color:#fff; font-size:13px; font-weight:800; }
+      .timeline-stop:first-of-type .timeline-number { background:var(--blue); }
+      .timeline-copy { display:grid; grid-template-columns:47px 1fr; column-gap:8px; align-items:baseline; }
+      .timeline-time { color:var(--muted); font-size:13px; font-variant-numeric:tabular-nums; }
+      .timeline-copy strong { font-size:14px; }
+      .timeline-copy small { grid-column:2; margin-top:3px; color:var(--muted); font-size:12px; }
+      .timeline-gap { margin:0 0 0 24px; padding:2px 0 2px 32px; border-left:2px solid var(--line); color:#98a2b3; font-size:11px; }
+      .trip-note { margin:0; padding:11px 18px 15px; border-top:1px solid var(--line); color:var(--muted); font-size:11px; }
+      .trip-panel.is-collapsed { width:54px; height:54px; overflow:hidden; border-radius:15px; }
+      .trip-panel.is-collapsed .trip-head { height:54px; padding:0; border:0; }
+      .trip-panel.is-collapsed .trip-head > :not(.panel-toggle), .trip-panel.is-collapsed .timeline, .trip-panel.is-collapsed .trip-note { display:none; }
+      .trip-panel.is-collapsed .panel-toggle { top:10px; right:10px; }
+      .route-popup { min-width:240px; color:var(--ink); font-family:inherit; }
+      .popup-seq { color:var(--orange); font-size:11px; font-weight:800; letter-spacing:.08em; }
+      .popup-time { margin-top:5px; color:var(--muted); font-size:13px; font-weight:700; }
+      .route-popup h3 { margin:2px 0 8px; font-size:18px; }
+      .route-popup p { margin:5px 0; line-height:1.45; }
+      .popup-activity { font-weight:700; }
+      .popup-address { color:var(--muted); font-size:12px; }
+      .route-popup a { display:inline-block; margin-top:7px; color:var(--blue); font-weight:700; text-decoration:none; }
+      @media (max-width: 640px) {
+        .trip-panel { top:10px; left:10px; right:10px; width:auto; max-height:46vh; }
+        .trip-panel.is-collapsed { right:auto; width:54px; }
+        .leaflet-control-zoom { margin-top:74px !important; }
+      }
+    </style>
+
+    <aside class="trip-panel" id="trip-panel" aria-label="8월 17일 일정 목록">
+      <header class="trip-head">
+        <div class="trip-kicker">MON · AUG 17</div>
+        <h1>강릉 → 양양 여행 루트</h1>
+        <p>08:57–18:30 · 7개 지점</p>
+        <button class="panel-toggle" type="button" aria-label="일정 패널 접기" onclick="toggleTripPanel()">−</button>
+      </header>
+      <div class="timeline">
+            <button class="timeline-stop" type="button"
+                    onclick="focusStop(37.5548238, 126.9722165)">
+              <span class="timeline-number">1</span>
+              <span class="timeline-copy">
+                <span class="timeline-time">08:57</span>
+                <strong>서울역</strong>
+                <small>강릉으로 출발</small>
+              </span>
+            </button>
+            <div class="timeline-gap">↓ 다음 일정까지 2시간 1분</div>
+            <button class="timeline-stop" type="button"
+                    onclick="focusStop(37.76452, 128.8993979)">
+              <span class="timeline-number">2</span>
+              <span class="timeline-copy">
+                <span class="timeline-time">10:58</span>
+                <strong>강릉역</strong>
+                <small>강릉 입성</small>
+              </span>
+            </button>
+            <div class="timeline-gap">↓ 다음 일정까지 22분</div>
+            <button class="timeline-stop" type="button"
+                    onclick="focusStop(37.7552146, 128.8865008)">
+              <span class="timeline-number">3</span>
+              <span class="timeline-copy">
+                <span class="timeline-time">11:20</span>
+                <strong>히노키공방</strong>
+                <small>점심 식사</small>
+              </span>
+            </button>
+            <div class="timeline-gap">↓ 다음 일정까지 40분</div>
+            <button class="timeline-stop" type="button"
+                    onclick="focusStop(37.7540236, 128.8986233)">
+              <span class="timeline-number">4</span>
+              <span class="timeline-copy">
+                <span class="timeline-time">12:00</span>
+                <strong>중앙시장</strong>
+                <small>메종고니 · 포테이토교</small>
+              </span>
+            </button>
+            <div class="timeline-gap">↓ 다음 일정까지 1시간</div>
+            <button class="timeline-stop" type="button"
+                    onclick="focusStop(37.78981, 128.87634)">
+              <span class="timeline-number">5</span>
+              <span class="timeline-copy">
+                <span class="timeline-time">13:00</span>
+                <strong>서지초가뜰</strong>
+                <small>카페</small>
+              </span>
+            </button>
+            <div class="timeline-gap">↓ 다음 일정까지 2시간 30분 · 양양 이동</div>
+            <button class="timeline-stop" type="button"
+                    onclick="focusStop(38.116101, 128.6323391)">
+              <span class="timeline-number">6</span>
+              <span class="timeline-copy">
+                <span class="timeline-time">15:30</span>
+                <strong>숙소 · 르부르 낙산</strong>
+                <small>짐 풀기 → 실내 수영</small>
+              </span>
+            </button>
+            <div class="timeline-gap">↓ 다음 일정까지 3시간</div>
+            <button class="timeline-stop" type="button"
+                    onclick="focusStop(38.0661933, 128.6195458)">
+              <span class="timeline-number">7</span>
+              <span class="timeline-copy">
+                <span class="timeline-time">18:30</span>
+                <strong>송이버섯마을</strong>
+                <small>저녁 식사</small>
+              </span>
+            </button>
+            </div>
+      <p class="trip-note">지도 선은 일정 순서를 잇는 직선이며 실제 도로 경로가 아닙니다.</p>
+    </aside>
+
+    <script>
+      function focusStop(lat, lon) {
+        map_0d09262ddda9c4dc16cd2b97580accdc.flyTo([lat, lon], 14, {duration: 0.8});
+      }
+      function toggleTripPanel() {
+        const panel = document.getElementById('trip-panel');
+        const button = panel.querySelector('.panel-toggle');
+        const collapsed = panel.classList.toggle('is-collapsed');
+        button.textContent = collapsed ? '☰' : '−';
+        button.setAttribute('aria-label', collapsed ? '일정 패널 열기' : '일정 패널 접기');
+      }
+    </script>
+    
+    
+            <div class="folium-map" id="map_0d09262ddda9c4dc16cd2b97580accdc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0d09262ddda9c4dc16cd2b97580accdc = L.map(
+                "map_0d09262ddda9c4dc16cd2b97580accdc",
+                {
+                    center: [37.92, 128.1],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": true,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_0d09262ddda9c4dc16cd2b97580accdc);
+
+            
+
+        
+    
+            var tile_layer_950523f47788c2f00912a4d7a31be5ed = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_950523f47788c2f00912a4d7a31be5ed.addTo(map_0d09262ddda9c4dc16cd2b97580accdc);
+        
+    
+            var feature_group_149e3c273f513a12d782e877ebdc62ae = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_067266124da85897b87c292477d7ca61 = L.polyline(
+                [[37.5548238, 126.9722165], [37.76452, 128.8993979]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": "10 8", "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.78, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_149e3c273f513a12d782e877ebdc62ae);
+        
+    
+            poly_line_067266124da85897b87c292477d7ca61.bindTooltip(
+                `<div>
+                     열차 이동 · 서울역 → 강릉역
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c62c2d4e899af2acfecd3b30b135efde = L.marker(
+                [37.5548238, 126.9722165],
+                {
+}
+            ).addTo(feature_group_149e3c273f513a12d782e877ebdc62ae);
+        
+    
+            var div_icon_41d929e6fe5f02afcf90af4e1d3b0e3d = L.divIcon({
+  "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#2563eb\" aria-label=\"1\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e1\u003c/span\u003e\n    \u003c/div\u003e\n    ",
+  "iconSize": [36, 44],
+  "iconAnchor": [18, 42],
+  "popupAnchor": [0, -40],
+  "className": "route-div-icon",
+});
+        
+    
+        var popup_c8eeca11a89ab10eb156a728a1b287f9 = L.popup({
+  "maxWidth": 310,
+});
+
+        
+            
+                var html_af5fe189f6d97d5e5733889e45b20c8b = $(`<div id="html_af5fe189f6d97d5e5733889e45b20c8b" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 1</div>       <div class="popup-time">08:57</div>       <h3>서울역</h3>       <p class="popup-activity">🚆 강릉으로 출발</p>       <p class="popup-address">서울특별시 용산구 한강대로 405</p>       <a href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%95%9C%EA%B0%95%EB%8C%80%EB%A1%9C%20405" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_c8eeca11a89ab10eb156a728a1b287f9.setContent(html_af5fe189f6d97d5e5733889e45b20c8b);
+            
+        
+
+        marker_c62c2d4e899af2acfecd3b30b135efde.bindPopup(popup_c8eeca11a89ab10eb156a728a1b287f9)
+        ;
+
+        
+    
+    
+            marker_c62c2d4e899af2acfecd3b30b135efde.bindTooltip(
+                `<div>
+                     1. 08:57 · 서울역
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c62c2d4e899af2acfecd3b30b135efde.setIcon(div_icon_41d929e6fe5f02afcf90af4e1d3b0e3d);
+            
+    
+            feature_group_149e3c273f513a12d782e877ebdc62ae.addTo(map_0d09262ddda9c4dc16cd2b97580accdc);
+        
+    
+            var feature_group_6e0b0897ef3c2e590722c10187e8526a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_4aef0646d626c479e67da79e575908c0 = L.polyline(
+                [[37.76452, 128.8993979], [37.7552146, 128.8865008], [37.7540236, 128.8986233], [37.78981, 128.87634], [38.116101, 128.6323391], [38.0661933, 128.6195458]],
+                {"bubblingMouseEvents": true, "color": "#ea580c", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ea580c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.82, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_6e0b0897ef3c2e590722c10187e8526a);
+        
+    
+            poly_line_4aef0646d626c479e67da79e575908c0.bindTooltip(
+                `<div>
+                     강릉·양양 현지 일정 순서
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_89713559f16bf3926eaadb16d60758fc = L.marker(
+                [37.76452, 128.8993979],
+                {
+}
+            ).addTo(feature_group_6e0b0897ef3c2e590722c10187e8526a);
+        
+    
+            var div_icon_81cce309785f4bc89ecb78a914c84129 = L.divIcon({
+  "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#2563eb\" aria-label=\"2\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e2\u003c/span\u003e\n    \u003c/div\u003e\n    ",
+  "iconSize": [36, 44],
+  "iconAnchor": [18, 42],
+  "popupAnchor": [0, -40],
+  "className": "route-div-icon",
+});
+        
+    
+        var popup_d3dde9e4c6c4405303e7126c9bf6050e = L.popup({
+  "maxWidth": 310,
+});
+
+        
+            
+                var html_4ee0bb479c96bcc2f36ad780ddc34ef6 = $(`<div id="html_4ee0bb479c96bcc2f36ad780ddc34ef6" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 2</div>       <div class="popup-time">10:58</div>       <h3>강릉역</h3>       <p class="popup-activity">📍 강릉 입성</p>       <p class="popup-address">강원특별자치도 강릉시 용지로 176</p>       <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EC%9A%A9%EC%A7%80%EB%A1%9C%20176" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_d3dde9e4c6c4405303e7126c9bf6050e.setContent(html_4ee0bb479c96bcc2f36ad780ddc34ef6);
+            
+        
+
+        marker_89713559f16bf3926eaadb16d60758fc.bindPopup(popup_d3dde9e4c6c4405303e7126c9bf6050e)
+        ;
+
+        
+    
+    
+            marker_89713559f16bf3926eaadb16d60758fc.bindTooltip(
+                `<div>
+                     2. 10:58 · 강릉역
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_89713559f16bf3926eaadb16d60758fc.setIcon(div_icon_81cce309785f4bc89ecb78a914c84129);
+            
+    
+            var marker_76710584dc365f84c396559c62635945 = L.marker(
+                [37.7552146, 128.8865008],
+                {
+}
+            ).addTo(feature_group_6e0b0897ef3c2e590722c10187e8526a);
+        
+    
+            var div_icon_34a54b881537d430638528d12d9e7b8f = L.divIcon({
+  "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"3\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e3\u003c/span\u003e\n    \u003c/div\u003e\n    ",
+  "iconSize": [36, 44],
+  "iconAnchor": [18, 42],
+  "popupAnchor": [0, -40],
+  "className": "route-div-icon",
+});
+        
+    
+        var popup_3cf7b3edb38a48f0ff7e050d39b606e4 = L.popup({
+  "maxWidth": 310,
+});
+
+        
+            
+                var html_038acdc9cf351e4817f89cb189776181 = $(`<div id="html_038acdc9cf351e4817f89cb189776181" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 3</div>       <div class="popup-time">11:20</div>       <h3>히노키공방</h3>       <p class="popup-activity">🍽️ 점심 식사</p>       <p class="popup-address">강원 강릉시 골말길 43 1층</p>       <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EA%B3%A8%EB%A7%90%EA%B8%B8%2043%201%EC%B8%B5" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_3cf7b3edb38a48f0ff7e050d39b606e4.setContent(html_038acdc9cf351e4817f89cb189776181);
+            
+        
+
+        marker_76710584dc365f84c396559c62635945.bindPopup(popup_3cf7b3edb38a48f0ff7e050d39b606e4)
+        ;
+
+        
+    
+    
+            marker_76710584dc365f84c396559c62635945.bindTooltip(
+                `<div>
+                     3. 11:20 · 히노키공방
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_76710584dc365f84c396559c62635945.setIcon(div_icon_34a54b881537d430638528d12d9e7b8f);
+            
+    
+            var marker_70937a81100cb7c5862ca80b0e9de65e = L.marker(
+                [37.7540236, 128.8986233],
+                {
+}
+            ).addTo(feature_group_6e0b0897ef3c2e590722c10187e8526a);
+        
+    
+            var div_icon_5e09ef0f48586b46433e2ba00b18ee29 = L.divIcon({
+  "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"4\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e4\u003c/span\u003e\n    \u003c/div\u003e\n    ",
+  "iconSize": [36, 44],
+  "iconAnchor": [18, 42],
+  "popupAnchor": [0, -40],
+  "className": "route-div-icon",
+});
+        
+    
+        var popup_5ce2a8fe64d80f4f4873626008eb5b3b = L.popup({
+  "maxWidth": 310,
+});
+
+        
+            
+                var html_8b1fe4028960452ad76c6810152e70ee = $(`<div id="html_8b1fe4028960452ad76c6810152e70ee" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 4</div>       <div class="popup-time">12:00</div>       <h3>중앙시장</h3>       <p class="popup-activity">🛍️ 메종고니 · 포테이토교</p>       <p class="popup-address">강원 강릉시 금성로 21</p>       <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EA%B8%88%EC%84%B1%EB%A1%9C%2021" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_5ce2a8fe64d80f4f4873626008eb5b3b.setContent(html_8b1fe4028960452ad76c6810152e70ee);
+            
+        
+
+        marker_70937a81100cb7c5862ca80b0e9de65e.bindPopup(popup_5ce2a8fe64d80f4f4873626008eb5b3b)
+        ;
+
+        
+    
+    
+            marker_70937a81100cb7c5862ca80b0e9de65e.bindTooltip(
+                `<div>
+                     4. 12:00 · 중앙시장
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_70937a81100cb7c5862ca80b0e9de65e.setIcon(div_icon_5e09ef0f48586b46433e2ba00b18ee29);
+            
+    
+            var marker_693d4013acfc7df2c6bf6b0731591912 = L.marker(
+                [37.78981, 128.87634],
+                {
+}
+            ).addTo(feature_group_6e0b0897ef3c2e590722c10187e8526a);
+        
+    
+            var div_icon_e2ce5c515f237585ae22d0a29dbbfa3f = L.divIcon({
+  "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"5\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e5\u003c/span\u003e\n    \u003c/div\u003e\n    ",
+  "iconSize": [36, 44],
+  "iconAnchor": [18, 42],
+  "popupAnchor": [0, -40],
+  "className": "route-div-icon",
+});
+        
+    
+        var popup_57c6eb4e2cafe4bb9a823375f30e6005 = L.popup({
+  "maxWidth": 310,
+});
+
+        
+            
+                var html_04e048bcc9ffba33505b3bdb09ad57c8 = $(`<div id="html_04e048bcc9ffba33505b3bdb09ad57c8" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 5</div>       <div class="popup-time">13:00</div>       <h3>서지초가뜰</h3>       <p class="popup-activity">☕ 카페</p>       <p class="popup-address">강원 강릉시 난곡길76번길 43-8</p>       <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EA%B0%95%EB%A6%89%EC%8B%9C%20%EB%82%9C%EA%B3%A1%EA%B8%B876%EB%B2%88%EA%B8%B8%2043-8" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_57c6eb4e2cafe4bb9a823375f30e6005.setContent(html_04e048bcc9ffba33505b3bdb09ad57c8);
+            
+        
+
+        marker_693d4013acfc7df2c6bf6b0731591912.bindPopup(popup_57c6eb4e2cafe4bb9a823375f30e6005)
+        ;
+
+        
+    
+    
+            marker_693d4013acfc7df2c6bf6b0731591912.bindTooltip(
+                `<div>
+                     5. 13:00 · 서지초가뜰
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_693d4013acfc7df2c6bf6b0731591912.setIcon(div_icon_e2ce5c515f237585ae22d0a29dbbfa3f);
+            
+    
+            var marker_d22da783ab643e60d789a0c467746914 = L.marker(
+                [38.116101, 128.6323391],
+                {
+}
+            ).addTo(feature_group_6e0b0897ef3c2e590722c10187e8526a);
+        
+    
+            var div_icon_70574bc7887e4ee78f9ceb8134fa468d = L.divIcon({
+  "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"6\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e6\u003c/span\u003e\n    \u003c/div\u003e\n    ",
+  "iconSize": [36, 44],
+  "iconAnchor": [18, 42],
+  "popupAnchor": [0, -40],
+  "className": "route-div-icon",
+});
+        
+    
+        var popup_93eed4db57045cdd3d3a3225bae6b70b = L.popup({
+  "maxWidth": 310,
+});
+
+        
+            
+                var html_5b59e978e80ad5a4a679a2d1f3095117 = $(`<div id="html_5b59e978e80ad5a4a679a2d1f3095117" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 6</div>       <div class="popup-time">15:30</div>       <h3>숙소 · 르부르 낙산</h3>       <p class="popup-activity">🏊 짐 풀기 → 실내 수영</p>       <p class="popup-address">강원 양양군 강현면 일출로 47</p>       <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EC%96%91%EC%96%91%EA%B5%B0%20%EA%B0%95%ED%98%84%EB%A9%B4%20%EC%9D%BC%EC%B6%9C%EB%A1%9C%2047" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_93eed4db57045cdd3d3a3225bae6b70b.setContent(html_5b59e978e80ad5a4a679a2d1f3095117);
+            
+        
+
+        marker_d22da783ab643e60d789a0c467746914.bindPopup(popup_93eed4db57045cdd3d3a3225bae6b70b)
+        ;
+
+        
+    
+    
+            marker_d22da783ab643e60d789a0c467746914.bindTooltip(
+                `<div>
+                     6. 15:30 · 숙소 · 르부르 낙산
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d22da783ab643e60d789a0c467746914.setIcon(div_icon_70574bc7887e4ee78f9ceb8134fa468d);
+            
+    
+            var marker_b357571773d2a24bf8e33b8f35bbc052 = L.marker(
+                [38.0661933, 128.6195458],
+                {
+}
+            ).addTo(feature_group_6e0b0897ef3c2e590722c10187e8526a);
+        
+    
+            var div_icon_68c39ebb5b48d813f57919cbee81e5c5 = L.divIcon({
+  "html": "\n    \u003cdiv class=\"route-marker\" style=\"background:#ea580c\" aria-label=\"7\ubc88 \uc9c0\uc810\"\u003e\n      \u003cspan\u003e7\u003c/span\u003e\n    \u003c/div\u003e\n    ",
+  "iconSize": [36, 44],
+  "iconAnchor": [18, 42],
+  "popupAnchor": [0, -40],
+  "className": "route-div-icon",
+});
+        
+    
+        var popup_4d43b98028efcdde934fae5bbeb564d2 = L.popup({
+  "maxWidth": 310,
+});
+
+        
+            
+                var html_432326d10615cec74ef5a8abcac559b4 = $(`<div id="html_432326d10615cec74ef5a8abcac559b4" style="width: 100.0%; height: 100.0%;">     <div class="route-popup">       <div class="popup-seq">STOP 7</div>       <div class="popup-time">18:30</div>       <h3>송이버섯마을</h3>       <p class="popup-activity">🍄 저녁 식사</p>       <p class="popup-address">강원 양양군 양양읍 남대천로 55-20</p>       <a href="https://www.google.com/maps/search/?api=1&query=%EA%B0%95%EC%9B%90%20%EC%96%91%EC%96%91%EA%B5%B0%20%EC%96%91%EC%96%91%EC%9D%8D%20%EB%82%A8%EB%8C%80%EC%B2%9C%EB%A1%9C%2055-20" target="_blank" rel="noopener">Google 지도에서 열기 ↗</a>     </div>     </div>`)[0];
+                popup_4d43b98028efcdde934fae5bbeb564d2.setContent(html_432326d10615cec74ef5a8abcac559b4);
+            
+        
+
+        marker_b357571773d2a24bf8e33b8f35bbc052.bindPopup(popup_4d43b98028efcdde934fae5bbeb564d2)
+        ;
+
+        
+    
+    
+            marker_b357571773d2a24bf8e33b8f35bbc052.bindTooltip(
+                `<div>
+                     7. 18:30 · 송이버섯마을
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b357571773d2a24bf8e33b8f35bbc052.setIcon(div_icon_68c39ebb5b48d813f57919cbee81e5c5);
+            
+    
+            feature_group_6e0b0897ef3c2e590722c10187e8526a.addTo(map_0d09262ddda9c4dc16cd2b97580accdc);
+        
+    
+            var layer_control_6a0e7f01c81f9dbddbd8a1e6e648ad1a_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_950523f47788c2f00912a4d7a31be5ed,
+                },
+                overlays :  {
+                    "\uc5f4\ucc28 \uc774\ub3d9 \u00b7 \uc11c\uc6b8\u2192\uac15\ub989" : feature_group_149e3c273f513a12d782e877ebdc62ae,
+                    "\ud604\uc9c0 \uc77c\uc815 \u00b7 \uac15\ub989\u2192\uc591\uc591" : feature_group_6e0b0897ef3c2e590722c10187e8526a,
+                },
+            };
+            let layer_control_6a0e7f01c81f9dbddbd8a1e6e648ad1a = L.control.layers(
+                layer_control_6a0e7f01c81f9dbddbd8a1e6e648ad1a_layers.base_layers,
+                layer_control_6a0e7f01c81f9dbddbd8a1e6e648ad1a_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_0d09262ddda9c4dc16cd2b97580accdc);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topright",
+  "title": "\uc804\uccb4 \ud654\uba74",
+  "titleCancel": "\uc804\uccb4 \ud654\uba74 \uc885\ub8cc",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_0d09262ddda9c4dc16cd2b97580accdc);
+        
+    
+            var tile_layer_93672be99a1e76ec44c17d3dbebd81f8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_c48a5b8d9037026aff425ca4e374e5ba = new L.Control.MiniMap(
+                tile_layer_93672be99a1e76ec44c17d3dbebd81f8,
+                {
+  "position": "bottomright",
+  "width": 130,
+  "height": 90,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": true,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_0d09262ddda9c4dc16cd2b97580accdc.addControl(mini_map_c48a5b8d9037026aff425ca4e374e5ba);
+        
+    
+            map_0d09262ddda9c4dc16cd2b97580accdc.fitBounds(
+                [[37.5548238, 126.9722165], [37.76452, 128.8993979], [37.7552146, 128.8865008], [37.7540236, 128.8986233], [37.78981, 128.87634], [38.116101, 128.6323391], [38.0661933, 128.6195458]],
+                {"padding": [38, 38]}
+            );
+        
+</script>
+</html>
